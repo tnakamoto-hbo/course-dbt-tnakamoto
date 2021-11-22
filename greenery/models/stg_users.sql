@@ -19,9 +19,9 @@ users as (
         last_name,
         email,
         phone_number,
-        created_at,
-        updated_at,
-        address_id
+        created_at AT TIME ZONE 'UTC' AS created_at,
+        updated_at AT TIME ZONE 'UTC' AS updated_at,
+        address_id 
 
     from source
 

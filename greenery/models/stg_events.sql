@@ -18,7 +18,7 @@ events as (
         session_id,
         user_id,
         page_url,
-        created_at,
+        created_at AT TIME ZONE 'UTC' AS created_at,
         event_type
 
     from source
