@@ -18,7 +18,10 @@ orders as (
         user_id,
         promo_id,
         address_id,
-        created_at AT TIME ZONE 'UTC' AS created_at_utc,
+        case 
+          when created_at is null then to_timestamp('1970-01-01', 'YYYY-MM-DD HH:MI:SS') 
+          else created_at
+          end at time zone 'UTC' as created_at_utc,
         order_cost,
         shipping_cost,
         order_total,
