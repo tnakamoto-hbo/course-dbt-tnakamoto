@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: tutorial # name of the source 
+    schema: public # this is the schema our raw data lives in
+    database: dbt # this is the name of our database
+    tables:
+      - name: addresses 
+        description: >
+          Contains information about all Greenery users' addresses
+      - name: events 
+        loaded_at_field: created_at
+        description: >
+          Contains information about all tracking events on Greenery's website
+      - name: order_items
+        description: >
+          Contains information about the items on each order
+      - name: orders 
+        loaded_at_field: created_at
+        description: >
+          Contains information about all Greenery orders
+      - name: products 
+        description: >
+          Contains information about all Greenery products
+      - name: promos 
+        description: >
+          Contains information about all Greenery promotions
+      - name: users 
+        loaded_at_field: created_at
+        description: >
+          Contains information about all Greenery users
+
+
+
+
+

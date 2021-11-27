@@ -1,21 +1,6 @@
-version: 2
-
-sources:
-  - name: tutorial # name of the source 
-    schema: public # this is the schema our raw data lives in
-    database: dbt # this is the name of our database
-    tables:
-      - name: addresses 
-      - name: events 
-      - name: order_items
-      - name: orders
-      - name: products
-      - name: promos
-      - name: users
-
 models:
   - name: stg_addresses
-    description: ""
+    description: "staging table with customer addresses"
     columns:
       - name: id
         description: ""
@@ -30,7 +15,7 @@ models:
       - name: country
         description: ""
   - name: stg_events
-    description: ""
+    description: "website clickstream data"
     columns:
       - name: id
         description: ""
@@ -47,7 +32,7 @@ models:
       - name: event_type
         description: ""
   - name: stg_order_items
-    description: ""
+    description: "order items at the product_id grain"
     columns:
       - name: id
         description: ""
@@ -58,7 +43,7 @@ models:
       - name: quantity
         description: ""
   - name: stg_orders
-    description: ""
+    description: "order staging table"
     columns:
       - name: id
         description: ""
@@ -89,7 +74,7 @@ models:
       - name: status
         description: ""
   - name: stg_products
-    description: ""
+    description: "product staging table"
     columns:
       - name: id
         description: ""
@@ -102,7 +87,7 @@ models:
       - name: quantity
         description: ""
   - name: stg_promos
-    description: ""
+    description: "promos staging table"
     columns:
       - name: id
         description: ""
@@ -113,7 +98,7 @@ models:
       - name: status
         description: ""
   - name: stg_users
-    description: ""
+    description: "users staging table"
     columns:
       - name: id
         description: ""
