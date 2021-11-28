@@ -29,7 +29,7 @@ orders as (
         shipping_service,
         estimated_delivery_at AT TIME ZONE 'UTC' AS estimated_delivery_at_utc,
         delivered_at AT TIME ZONE 'UTC' AS delivered_at_utc,
-        status
+        status as order_status
 
     from source
 

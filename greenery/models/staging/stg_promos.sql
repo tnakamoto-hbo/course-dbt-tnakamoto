@@ -13,10 +13,9 @@ with source as (
 promos as (
 
     select
-        id,
         promo_id,
-        discout,
-        status
+        discout as promo_discount,
+        status as promo_status
 
     from source
 

@@ -35,11 +35,20 @@ lifetime_order_cnt as (
           on users.user_id = orders.user_id
 )
 
-select loc.user_id,
+select usr.user_id,
+    usr.first_name,
+    addr.zipcode,
+    addr.state,
+    addr.country,
+    usr.created_at,
+    usr.updated_at,
     loc.lifetime_order_cnt,
     fal.first_order_utc,
     fal.last_order_utc
-from lifetime_order_cnt loc
-    left join first_and_last fal 
-      on loc.user_id = fal.user_id
-order by first_order_utc
+from {{ ref('stg_users') }} usr
+left join {{ ref('stg_addresses') }} addr
+    on usr.address_id = addr.address_id
+left join lifetime_order_cnt loc
+    on usr.user_id = loc.user_id
+left join first_and_last fal 
+    on usr.user_id = fal.user_id

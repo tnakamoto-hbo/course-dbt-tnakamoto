@@ -9,7 +9,7 @@ with hourly_orders as (
         product_id,
         product_name,
         sum(quantity) as hourly_order_cnt
-    from {{ ref('product_orders') }}
+    from {{ ref('fact_product_orders') }}
     group by hour_utc,
         product_id,
         product_name
@@ -19,7 +19,7 @@ hourly_views as (
         product_id,
         product_name,
         sum(page_views) as hourly_view_cnt
-    from {{ ref('product_views') }}
+    from {{ ref('fact_product_views') }}
     group by hour_utc,
         product_id,
         product_name
