@@ -1,3 +1,5 @@
+version: 2
+
 models:
   - name: stg_addresses
     description: "staging table with customer addresses"
@@ -118,3 +120,4 @@ models:
         description: ""
       - name: address_id
         description: ""
+        
