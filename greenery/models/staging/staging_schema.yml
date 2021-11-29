@@ -60,7 +60,7 @@ models:
       - name: created_at
         description: ""
       - name: order_cost
-        description: ""
+        description: "total cost of the order"
       - name: shipping_cost
         description: ""
       - name: order_total
