@@ -2,5 +2,10 @@ version: 2
 
 models:
   - name: dim_products
+  - name: dim_users_profile
   - name: dim_users
   - name: fact_orders
+  - name: event_types_per_session
+    config:
+      materialized: table
+

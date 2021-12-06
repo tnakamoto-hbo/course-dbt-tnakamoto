@@ -8,7 +8,8 @@ with hourly_orders as (
     select date_trunc('hour', created_at_utc) as hour_utc,
         product_id,
         product_name,
-        sum(quantity) as hourly_order_cnt
+        1 as hourly_order_cnt,
+        sum(quantity) as hourly_order_quantity
     from {{ ref('fact_product_orders') }}
     group by hour_utc,
         product_id,
