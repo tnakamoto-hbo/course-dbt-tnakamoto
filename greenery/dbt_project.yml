@@ -23,7 +23,6 @@ target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_modules"
-models:
-  greenery:
-    post-hook:
-      - "{{ apply_grant_all(role='reporting') }}"
+
+on-run-end:
+ - "{{ grant_usage_to_schemas(schemas, 'reporting') }}"
