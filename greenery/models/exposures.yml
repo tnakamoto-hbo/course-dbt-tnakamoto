@@ -1,0 +1,14 @@
+version: 2
+
+exposures:
+
+- name: product_funnel_dasboard
+  type: dashboard
+  maturity: high
+  description: >
+    product funnel exposure
+  depends_on:
+    - ref('fact_funnel') 
+  owner:
+    name: thomas
+    email: tnakamoto@greenery.com

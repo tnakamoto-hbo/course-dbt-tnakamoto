@@ -7,5 +7,6 @@ models:
   - name: fact_orders
   - name: event_types_per_session
     config:
-      materialized: table
+      +materialized: table
+  - name: fact_funnel
 
